@@ -11,25 +11,22 @@
 	<body>
 
 		<button 
-			data-microshare
-			data-microshare-service="facebook"
+			data-microshare="facebook"
 			data-microshare-url="https://github.com/gulpjs">
 			Facebook
 		</button>		
 		<button
 			data-microshare-url="https://github.com/gulpjs"
-			data-microshare data-microshare-service="Twitter">
+			data-microshare="Twitter">
 			Twitter
 		</button>		
 		<button
-			data-microshare
 			data-microshare-url="https://github.com/gulpjs"
-			data-microshare-service="gplus">
+			data-microshare="gplus">
 			Google Plus
 		</button>
 		<button
-			data-microshare
-			data-microshare-service="in"
+			data-microshare="in"
 			data-microshare-url="https://github.com/gulpjs"
 			data-microshare-title="Ola mundo!">
 			LinkedIn
