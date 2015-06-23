@@ -4,21 +4,17 @@ O MicroShare é um simples código para atender as necessidades mais básicas de
 
 ### Funcionamento
 
-Para compartilhar uma página, o javascript se baseará em 2, 3 ou 4 atributos que podem ser utilizados em qualquer elemento. 
+Para compartilhar uma página, o javascript se baseará em 1, 2 ou 3 atributos que podem ser utilizados em qualquer elemento. 
 São eles:
 
 - data-microshare (obrigatório)
-- data-microshare-service (obrigatório)
 - data-microshare-url
 - data-microshare-title
 
 ##### data-microshare
 
-Este indica que o compartilhamento deve ser feito quando o elemento com este atributo for clicado.
-
-##### data-microshare-service
-
-Indica em qual rede social o conteúdo será compartilhado. Aceita os valores:
+Este indica que o compartilhamento deve ser feito quando o elemento com este atributo for clicado. 
+Apontando para a rede social que a página será compartilhado. Aceita os valores:
 
 - facebook / fb
 - twitter
@@ -27,8 +23,8 @@ Indica em qual rede social o conteúdo será compartilhado. Aceita os valores:
 
 ##### data-microshare-url
 
-Indica qual URL será enviada para no compartilhamento. É opcional, e caso o atributo seja omitido, compartilhará a página atual no navegador.
+Indica qual URL será enviada para o compartilhamento. É opcional, e caso o atributo seja omitido, compartilhará a página atual no navegador.
 
 ##### data-microshare-title
 
-Indica qual o título do link no compartilhamento. Usado somente no compartilhamento do Linkedin.
+Indica qual o título do link no compartilhamento. Usado somente no compartilhamento do Linkedin. Caso seja omitido, compartilhará o título da página atual
