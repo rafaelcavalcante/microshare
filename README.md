@@ -16,10 +16,10 @@ São eles:
 Este indica que o compartilhamento deve ser feito quando o elemento com este atributo for clicado. 
 Apontando para a rede social que a página será compartilhado. Aceita os valores:
 
-- facebook / fb
+- facebook
 - twitter
-- linkedin / in
-- gplus / googleplus
+- linkedin
+- gplus
 
 ##### data-microshare-url
 
