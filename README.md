@@ -37,3 +37,6 @@ Você pode adicionar uma rede social caso precise.
 O MicroShare possui o método `addShare( alias, url )`, que você pode adicionar uma rede social nova ao shareMap do plugin.  
 __Exemplo :__  
 `MicroShare.addShare( 'tumblr', 'http://www.tumblr.com/share/link?url={{url}}' )`
+
+__Observações :__  
+Ao adicionar uma rede nova ao shareMap, utilizar `{{url}}` e `{{title}}`, que serão substituídos pelas informações que estiverem nos elementos clicados.
