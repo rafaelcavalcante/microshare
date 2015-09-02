@@ -1,19 +1,44 @@
-$(function() {
-	$(document).on('click', '[data-microshare]', function(e){
-		e.preventDefault();
-
-		var shareScheme;
-		var shareService = $(this).attr('data-microshare').toLowerCase();
-		var shareTitle = $(this).attr('data-microshare-title') || document.title;
-		var shareUrl = $(this).attr('data-microshare-url') || document.URL;
-		var shareMap = {
-			facebook: 'https://www.facebook.com/sharer/sharer.php?u=',
-			twitter: 'https://twitter.com/home?status=',
-			gplus: 'https://plus.google.com/share?url=',
-			linkedin: 'https://www.linkedin.com/shareArticle?mini=true&url='+shareUrl+'&title='+shareTitle+'&summary=&source='
+(function(namespace, $) {
+	var MicroShare = function() {
+		var ms = this;
+		this.shareMap = {
+			facebook: 'https://www.facebook.com/sharer/sharer.php?u={{url}}',
+			twitter: 'https://twitter.com/home?status={{url}}',
+			gplus: 'https://plus.google.com/share?url={{url}}',
+			linkedin: 'https://www.linkedin.com/shareArticle?mini=true&url={{url}}&title={{title}}&source={{url}}'
 		};
-		shareScheme = shareMap[shareService] + shareUrl;
+		$(document).on('click', '[data-microshare]', ms.share.bind(ms));
+	};
 
-		window.open(shareScheme,'_blank','height=400, width=800');
+	MicroShare.prototype = {
+		callback: function(url) {
+			window.open(url,'_blank','height=400, width=800');
+		},
+		share: function(e) {
+			e.preventDefault();
+			var shareScheme = "";
+			var target = $(e.currentTarget);
+			var shareInfo = {
+				service: target.attr('data-microshare').toLowerCase(),
+				title: target.attr('data-microshare-title') || document.title,
+				url: target.attr('data-microshare-url') || document.URL
+			};
+			shareScheme = this.setScheme(shareInfo);
+			this.callback(shareScheme);
+		},
+		setScheme: function(shareInfo) {
+			var scheme = this.shareMap[shareInfo.service];
+			var regex = new RegExp("{{(\\w+)}}", 'gmi');
+			scheme = scheme.replace(regex, function(match, string) {
+				return shareInfo[string];
+			});
+			return scheme;
+		},
+		addShare: function(name, link) {
+			this.shareMap[name] = link;
+		}
+	};
+	$(function() {
+		namespace.MicroShare = new MicroShare();
 	});
-});
+})(window, window.jQuery || window.Zepto );
