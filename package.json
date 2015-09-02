@@ -1,0 +1,20 @@
+{
+  "name": "microshare",
+  "version": "1.0.0",
+  "description": "O MicroShare é um simples código para atender as necessidades mais básicas de compartilhamento entre as redes sociais mais comuns.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/renatomassao/microshare.git"
+  },
+  "author": "Renato Massao Yonamine <rmy.yonamine@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/renatomassao/microshare/issues"
+  },
+  "homepage": "https://github.com/renatomassao/microshare#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.4.0"
+  }
+}

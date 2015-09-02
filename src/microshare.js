@@ -11,9 +11,6 @@
 	};
 
 	MicroShare.prototype = {
-		callback: function(url) {
-			window.open(url,'_blank','height=400, width=800');
-		},
 		share: function(e) {
 			e.preventDefault();
 			var shareScheme = "";
@@ -24,7 +21,7 @@
 				url: target.attr('data-microshare-url') || document.URL
 			};
 			shareScheme = this.setScheme(shareInfo);
-			this.callback(shareScheme);
+			window.open(shareScheme,'_blank','height=400, width=800');
 		},
 		setScheme: function(shareInfo) {
 			var scheme = this.shareMap[shareInfo.service];
