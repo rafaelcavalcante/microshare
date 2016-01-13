@@ -1,4 +1,4 @@
-(function(namespace, $) {
+(function(namespace) {
 	var MicroShare = function() {
 		var ms = this;
 		this.shareMap = {
@@ -7,35 +7,38 @@
 			gplus: 'https://plus.google.com/share?url={{url}}',
 			linkedin: 'https://www.linkedin.com/shareArticle?mini=true&url={{url}}&title={{title}}&source={{url}}'
 		};
-		$(document).on('click', '[data-microshare]', ms.share.bind(ms));
-	};
+		document.querySelector('body').addEventListener('click', function(event) {
+			if(event.target.dataset['microshare']) {
+				share.call(ms, event);
+			}
+		});
 
-	MicroShare.prototype = {
-		share: function(e) {
+		this.addShare = function(name, link) {
+			this.shareMap[name] = link;
+		}
+
+		function share(e) {
 			e.preventDefault();
 			var shareScheme = "";
-			var target = $(e.currentTarget);
+			var target = e.target;
 			var shareInfo = {
-				service: target.attr('data-microshare').toLowerCase(),
-				title: target.attr('data-microshare-title') || document.title,
-				url: target.attr('data-microshare-url') || document.URL
+				service: target.dataset['microshare'].toLowerCase(),
+				title: target.dataset['microshare-title'] || document.title,
+				url: target.dataset['microshare-url'] || document.URL
 			};
-			shareScheme = this.setScheme(shareInfo);
+			shareScheme = setScheme.call(this, shareInfo);
 			window.open(shareScheme,'_blank','height=400, width=800');
-		},
-		setScheme: function(shareInfo) {
+		}
+
+		function setScheme(shareInfo) {
 			var scheme = this.shareMap[shareInfo.service];
 			var regex = new RegExp("{{(\\w+)}}", 'gmi');
 			scheme = scheme.replace(regex, function(match, string) {
 				return shareInfo[string];
 			});
 			return scheme;
-		},
-		addShare: function(name, link) {
-			this.shareMap[name] = link;
-		}
+		};
 	};
-	$(function() {
-		namespace.MicroShare = new MicroShare();
-	});
-})(window, window.jQuery || window.Zepto );
+
+	namespace.MicroShare = new MicroShare();
+})(window);
