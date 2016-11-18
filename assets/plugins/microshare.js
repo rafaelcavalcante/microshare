@@ -1,4 +1,5 @@
-$(function() {
+(function() {
+	var $ = jQuery;
 	$(document).on('click', '[data-microshare]', function(e){
 		e.preventDefault();
 
@@ -30,4 +31,4 @@ $(function() {
 		window.open(shareScheme,'_blank','height=400, width=800');
 
 	});
-});
+})();
