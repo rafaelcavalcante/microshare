@@ -1,4 +1,10 @@
-$(function() {
+(function() {
+	if(typeof jQuery == 'undefined') {
+		console.warn('You must have jQuery installed in order to use microshare');
+		return false;
+	}
+	
+	var $ = jQuery;
 	$(document).on('click', '[data-microshare]', function(e){
 		e.preventDefault();
 
@@ -30,4 +36,4 @@ $(function() {
 		window.open(shareScheme,'_blank','height=400, width=800');
 
 	});
-});
+})();
