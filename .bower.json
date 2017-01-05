@@ -1,0 +1,15 @@
+{
+  "name": "microshare",
+  "version": "1.0.0",
+  "license": "MIT",
+  "keywords": [
+    "share",
+    "sharing",
+    "javascript"
+  ],
+  "main": [
+    "dist/microshare.min.js"
+  ],
+  "homepage": "https://github.com/rafaelcavalcante/microshare",
+  "_source": "https://github.com/rafaelcavalcante/microshare.git"
+}
