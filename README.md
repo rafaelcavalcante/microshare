@@ -28,3 +28,9 @@ Indica qual URL será enviada para o compartilhamento. É opcional, e caso o atr
 ##### data-microshare-title
 
 Indica qual o título do link no compartilhamento. Usado somente no compartilhamento do Linkedin. Caso seja omitido, compartilhará o título da página atual
+
+## Contribuindo
+
+Não se esqueça de adicionar seu contato no arquivo [humans.txt](https://bitbucket.org/tutorials/markdowndemo)
+
+
