@@ -1,5 +1,13 @@
-/* TEAM */
+/*
+	TEAM
+	Ordered by contribution date
+*/
 
 Rafael Cavalcante
-eu@rafaelcavalcante.com
-http://rafaelcavalcante.com
+github.com/rafaelcavalcante
+
+Renato Massao Yonamine
+github.com/renatomassao
+
+André Gumieri
+github.com/andregumieri
