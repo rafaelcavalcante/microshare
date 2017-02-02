@@ -34,7 +34,7 @@ Indica qual o título do link no compartilhamento. Usado somente no compartilham
 ### Estendendo o MicroShare
 
 Você pode adicionar uma rede social caso precise.  
-O MicroShare possui o método `addShare( alias, url )`, que você pode usar adicionar uma rede social nova ao shareMap do plugin.  
+O MicroShare possui o método `addShare( alias, url )`, que você pode usar para adicionar uma rede social nova ao shareMap do plugin.  
 __Exemplo :__  
 ```js
 MicroShare.addShare( 'tumblr', 'http://www.tumblr.com/share/link?url={{url}}' )
