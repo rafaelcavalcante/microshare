@@ -1,33 +1,44 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<link rel="author" href="humans.txt">
-		<title>Micro Share</title>
-	</head>
-	<body>
-		<button
-			data-microshare="facebook"
-			data-microshare-url="https://github.com/gulpjs">
-			Facebook
-		</button>
-		<button
-			data-microshare-url="https://github.com/gulpjs"
-			data-microshare="Twitter">
-			Twitter
-		</button>
-		<button
-			data-microshare-url="https://github.com/gulpjs"
-			data-microshare="gplus">
-			Google Plus
-		</button>
-		<button
-			data-microshare="linkedin"
-			data-microshare-url="https://github.com/gulpjs"
-			data-microshare-title="Ola mundo!">
-			LinkedIn
-		</button>
-		<script src="dist/microshare.min.js"></script>
-	</body>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="author" href="humans.txt">
+    <script src="src/microshare.js" defer></script>
+    <title>Micro Share</title>
+  </head>
+  <body>
+    <button
+      data-microshare-url="https://github.com/rafaelcavalcante/microshare"
+      data-microshare="facebook">
+      Facebook
+    </button>
+    <button
+      data-microshare-url="https://github.com/rafaelcavalcante/microshare"
+      data-microshare="Twitter">
+      Twitter
+    </button>
+    <button
+      data-microshare-url="https://github.com/rafaelcavalcante/microshare"
+      data-microshare="gplus">
+      Google Plus
+    </button>
+    <button
+      data-microshare="linkedin"
+      data-microshare-url="https://github.com/rafaelcavalcante/microshare"
+      data-microshare-title="Olá mundo!">
+      LinkedIn
+    </button>
+    <button
+      data-microshare-url="https://github.com/rafaelcavalcante/microshare"
+      data-microshare="tumblr">
+      Tumblr
+    </button>
+    <button class="add-scheme">Make Tumblr button work</button>
+    <script>
+      document.querySelector('.add-scheme').addEventListener('click', function() {
+        MicroShare.addShare( 'tumblr', 'http://www.tumblr.com/share/link?url={{url}}' );
+      });
+    </script>
+  </body>
 </html>
