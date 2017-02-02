@@ -1,11 +1,11 @@
 # MicroShare
 
-O MicroShare é um simples código para atender as necessidades mais básicas de compartilhamento entre as redes sociais mais comuns. Seu funcionamento está todo dentro de um arquivo JS de menos de 1kb. 
+O MicroShare é um simples código para atender as necessidades mais básicas de compartilhamento entre as redes sociais mais comuns. Seu funcionamento está todo dentro de um arquivo JS de menos de 1kb.
 
 ### Funcionamento
 
 O plugin é executado no DOM ready da página e cria uma instância em `window.MicroShare`  
-Para compartilhar uma página, o javascript se baseará em 1, 2 ou 3 atributos que podem ser utilizados em qualquer elemento. 
+Para compartilhar uma página, o javascript se baseará em 1, 2 ou 3 atributos que podem ser utilizados em qualquer elemento.
 São eles:
 
 - `data-microshare` (obrigatório)
@@ -14,8 +14,8 @@ São eles:
 
 ##### data-microshare
 
-Este indica que o compartilhamento deve ser feito quando o elemento com este atributo for clicado. 
-Apontando para a rede social que a página será compartilhada. 
+Este indica que o compartilhamento deve ser feito quando o elemento com este atributo for clicado.
+Apontando para a rede social que a página será compartilhada.
 Aceita os valores:
 
 - facebook
@@ -40,3 +40,7 @@ __Exemplo :__
 
 __Observações :__  
 Ao adicionar uma rede nova ao shareMap, utilizar `{{url}}` e `{{title}}`, que serão substituídos pelas informações que estiverem nos elementos clicados.
+
+## Contribuindo
+
+Não se esqueça de adicionar seu contato no arquivo [humans.txt](https://bitbucket.org/tutorials/markdowndemo)
